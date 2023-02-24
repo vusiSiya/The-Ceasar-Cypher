@@ -5,12 +5,21 @@
     <link href="index.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="UI" >
-        <input  type ="text"  id="input-El" /><br />
-        <input type="number" id="cypher-Shift" width="40px"/> <br />
-        <button id="encrypt-Btn">Encrypt</button>
-        <pre id="output-El"></pre>
-
+    <div id="UI" >      
+        <h1 id="ceasar-Header">The Ceasar cypher</h1>
+        <div class="Prompt">
+            <h3 class= "Prompt msg">
+                Type a message:
+                <input  type ="text"  id="input-El" />
+            </h3>
+            
+            <h3 class= "Prompt num">
+                Pick a shift:
+                <input type="number" id="cypher-Shift" width="4px"/>          
+            </h3>
+            <button id="encrypt-Btn">Encrypt</button>     
+        </div>
+        <p id ="output-El">Encrypted message:</p>     
     </div>
     <script src ="index.js"></script>
 </body>

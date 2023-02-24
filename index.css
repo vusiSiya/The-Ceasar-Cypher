@@ -1,0 +1,53 @@
+body{
+	
+	background-color:#FFD54F;
+}
+
+#UI{
+		background-color:coral;
+		font: 25px monospace;
+		font-weight: bold;
+		color:gold;		
+}
+
+#ceasar-Header{
+	color:turquoise;
+	margin-left: 100px;
+	
+}
+
+.Prompt{
+	margin-left: 50px;	
+}
+
+.msg{
+	
+}
+#input-El{
+	border-radius: 10px;
+	height: 40px;
+	font-size: 19px;
+}
+
+#cypher-Shift{
+	
+	border-radius: 10px;
+	padding-left: 10px;
+}
+
+#encrypt-Btn{
+	background-color:#79c4c0;
+	color:brown;
+	font-weight: bold;
+	font: 20px monospace;
+	border: none;
+	border-radius: 10px;
+	padding: 13px;
+	margin-top: 5px;
+	margin-left: 260px;
+	margin-bottom:0px;;
+}
+
+#output-El{
+	margin-left: 100px;
+}
