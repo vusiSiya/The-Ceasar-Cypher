@@ -1,12 +1,15 @@
 body{
 	background-color:#FFD54F;
 }
+.UI{
+  margin-top: 100px;
+}
 #cypher-Img{
   background-color: coral;
   position: static;
-  margin-bottom: -25.7%;
-  margin-left: 230px;
-  height: 290px;
+  margin-bottom: -49%;
+  margin-left: 240px;
+  height: 340px;
   opacity: 100%;
    
 }
@@ -14,9 +17,10 @@ body{
 		background-color:coral;
 		font: 25px monospace;
 		font-weight: bold;
+    margin-top: 300px;
     margin-left: 200px;
     color:#00ffe5;
-    width: 810px;
+    width: 770px;
 			
 }
 
@@ -58,5 +62,5 @@ body{
 
 #output-El{
 	margin-left: 100px;
-  color: gold;
+  color:#00ffe5;
 }
