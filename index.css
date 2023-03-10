@@ -1,32 +1,32 @@
 body{
-	background-color:#FFD54F;
+	background-color:#f5e19e;
 }
-.UI{
-  margin-top: 100px;
-}
+
 #cypher-Img{
   background-color: coral;
   position: static;
-  margin-bottom: -49%;
-  margin-left: 240px;
-  height: 340px;
-  opacity: 100%;
-   
+  margin-bottom: -45%;
+  margin-left: 50px;
+  height: 320px;
+  width: 410px;
 }
+
 #UI{
 		background-color:coral;
 		font: 25px monospace;
 		font-weight: bold;
-    margin-top: 300px;
+    margin-top: 100px;
     margin-left: 200px;
-    color:#00ffe5;
-    width: 770px;
-			
+    border-radius:10px;
+    color: gold;
+    width: 770px;			
 }
 
 #ceasar-Header{
-  color:gold;
+  color:#00ffe5;
 	margin-left: 100px;
+  margin-top:3px;
+  font-weight: 750;
 	
 }
 
@@ -36,7 +36,7 @@ body{
 
 #input-El{
 	border-radius: 10px;
-	height: 40px;
+	height: 30px;
   width:600px;
 	font-size: 15px;
 }
@@ -61,6 +61,6 @@ body{
 }
 
 #output-El{
-	margin-left: 100px;
-  color:#00ffe5;
+  margin-left: 50px;
+  color: gold;
 }
