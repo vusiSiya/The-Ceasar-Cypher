@@ -2,6 +2,7 @@ body{
 	background-color:#f5e19e;
   font: 25px monospace;
   font-weight: 750;
+  margin: 0px;
 
 }
 
@@ -17,8 +18,7 @@ body{
 #UI{
 		background-color:coral;
 	
-    margin-top: 100px;
-    margin-left: 200px;
+    margin: 5% auto;
     border-radius:10px;
     color: gold;
     width: 770px;			
@@ -58,11 +58,16 @@ body{
 	border-radius: 10px;
 	padding: 13px;
 	margin-top: 5px;
-	margin-left: 260px;
+	margin-left:40%;
 	margin-bottom:0px;;
 }
 
 #output-El{
   margin-left: 50px;
   color: gold;
+}
+
+#footer-p{
+  text-align: center;
+  margin: auto 20%;
 }
