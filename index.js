@@ -7,9 +7,16 @@ const encryptBtn = document.getElementById("encrypt-Btn")
 let alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 encryptBtn.addEventListener("click", function() {
-  inputEl.textContent = " "
-  outputEl.textContent = " ";
+  inputEl.textContent = ""
+  outputEl.textContent = "";
   encryptMessage(inputEl.value)
+})
+encryptBtn.addEventListener(", (e) => {
+  if (e.keydown === "Enter") {
+    inputEl.textContent = ""
+    outputEl.textContent = "";
+    encryptMessage(inputEl.value)
+  }
 })
 
 function encryptMessage(_message) {
@@ -38,13 +45,3 @@ function encryptMessage(_message) {
 
   return outputEl.textContent = `Encrypted Message: ${encrypt}`;
 }
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,8 @@
 body{
 	background-color:#f5e19e;
+  font: 25px monospace;
+  font-weight: 750;
+
 }
 
 #cypher-Img{
@@ -13,8 +16,7 @@ body{
 
 #UI{
 		background-color:coral;
-		font: 25px monospace;
-		font-weight: bold;
+	
     margin-top: 100px;
     margin-left: 200px;
     border-radius:10px;
@@ -26,8 +28,6 @@ body{
   color:#00ffe5;
 	margin-left: 100px;
   margin-top:3px;
-  font-weight: 750;
-	
 }
 
 .Prompt{
@@ -39,12 +39,14 @@ body{
 	height: 30px;
   width:600px;
 	font-size: 15px;
+  font-weight: 530;
 }
 
-#cypher-Shift{
-	
+#cypher-Shift{	
 	border-radius: 10px;
 	padding-left: 10px;
+  height: 20px;
+  font-weight: 530;
 }
 
 #encrypt-Btn{
