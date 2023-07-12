@@ -1,41 +1,59 @@
+const root = document.querySelector(".root")
+const inputEl = document.querySelector(".messageEl");
+const shiftEl = document.querySelector(".shiftEl");
+const outputEl = document.querySelector(".outputEl");
+const decryptEl = document.querySelector(".decryptedEl");
+let message
+let shift
+let changedMessage
+let decryptMessage = false;
+const characters = createArray('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
-const inputEl = document.getElementById("input-El")
-const Shift = document.getElementById("cypher-Shift")
-const outputEl = document.getElementById("output-El")
-const encryptBtn = document.getElementById("encrypt-Btn")
-const ImageElement = document.getElementById("image-El")
-
-let alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-
-encryptBtn.addEventListener("click", function() {
-  inputEl.textContent = " "
-  outputEl.textContent = " ";
-  ImageElement.innerHTML = `  <img src="boingBoing.png" id="cypher-Img" />`
-  encryptMessage(inputEl.value)
-
+document.addEventListener("change", (e)=>{
+	const {value, className} = e.target;
+	className === "shiftEl" ? shift = value : message = value;
 })
 
-function encryptMessage(_message) {
-  _message = _message.toUpperCase()
-  let j = 0, i = 0;
-  let mLength = _message.length
-  let aLength = alphabets.length
-  let encrypt = ""
-  let newLetter = ""
-
-  for (i = 0; i < mLength; i++) {
-    for (j = 0; j < aLength; j++) {
-      if (_message[i] === alphabets[j]) {
-        let sum = j + Shift.value * 1
-        newLetter = alphabets[sum % 26]
-        encrypt = encrypt + `${newLetter}`
-      }
-      else if (_message[i] === " ") {
-        encrypt += " "
-      }
-    }
-  }
-
-  return outputEl.textContent = `Encrypted Message: ${encrypt}`;
+function createArray (_string){
+	let newArray = [];
+	for (let character of _string) {
+		newArray.push(character);
+	}
+	return newArray;
 }
 
+function getEncrypted (){
+	decryptMessage = false;
+	changedMessage = encrypt(characters, shift, message, 1);
+	renderMessage(changedMessage, outputEl);
+}
+
+function encrypt (_characters,_shift,_message,_one){
+	let newString = ""
+	for (let character of _message) {
+		if(character != " "){	
+			let charIndex =_characters.indexOf(character.toUpperCase());
+			let sum =  charIndex + (_shift * _one);
+			const index = decryptMessage === false ?
+				sum % 26
+				: 
+				sum < 0 ? 26 + (sum % 26) : sum;
+			let newChar = _characters[index];
+			newString += newChar;		
+		}
+		else {
+			newString += character;
+		}		
+	}
+	return newString;
+}
+
+function decrypt(){
+	decryptMessage = true;
+	let decryptedMessage = encrypt(characters, shift, changedMessage, -1);
+	renderMessage(decryptedMessage, decryptEl);
+}
+
+function renderMessage (_changedMessage,_element){
+	_element.innerText = _changedMessage;
+}
