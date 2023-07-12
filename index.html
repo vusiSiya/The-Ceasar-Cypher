@@ -2,27 +2,28 @@
 <html>
 <head>
     <title>The Ceasar Cypher</title>
-    <link r-El="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <div class="UI">
-        <h1>The Ceasar Cypher</h1>
-        <div class="get-data">
-            <h3 class="Prompt">
-                Enter a message:
-            </h3>
-            <input type="text" placeholder="Message" class="input-El" />
-            <input type="number" placeholder="Cypher Shift" class="shift-El" />
+    <main>
+        <div class="card">
+            <h1>The Ceasar Cypher</h1>
+            <div class="card-content">
+                 <div class="get-data">
+                    <input type="text" name="message" placeholder="Type your message here..." class="message-El" />
+                    <input type="number" name="shift" placeholder="Shift" class="shift-El" />
+                </div>
+                <div class="buttons-wrapper">
+                    <button class"btn-encrypt" onclick="getEncryptedMsg()">Encrypt</button>
+                    <button class"btn-decrypt" onclick="decrypt()">Decrypt</button>
+                </div>
+                <section>
+                    <p class="output-El"></p>
+                    <p class="decrypted-El"></p>
+                </section>            
+            </div>       
         </div>
-        <button class"btn-encrypt" onclick="getEncrypted()">Encrypt</button>
-        <button class"btn-decrypt" onclick="decrypt()">Decrypt</button>
-        <p>Encryption:
-        <span class="output-El"></span>
-        </p>
-        <p >Decryption:
-        <span class="decrypted-El"></span>
-        </p>
-        <script src="index.js"></script>
-    </div>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>

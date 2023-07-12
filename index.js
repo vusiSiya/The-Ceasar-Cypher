@@ -1,17 +1,17 @@
 const root = document.querySelector(".root")
-const inputEl = document.querySelector(".messageEl");
-const shiftEl = document.querySelector(".shiftEl");
-const outputEl = document.querySelector(".outputEl");
-const decryptEl = document.querySelector(".decryptedEl");
-let message
-let shift
-let changedMessage
+const inputEl = document.querySelector(".message-El");
+const shiftEl = document.querySelector(".shift-El");
+const outputEl = document.querySelector(".output-El");
+const decryptEl = document.querySelector(".decrypted-El");
+let message;
+let shift;
+let changedMessage;
 let decryptMessage = false;
 const characters = createArray('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 document.addEventListener("change", (e)=>{
 	const {value, className} = e.target;
-	className === "shiftEl" ? shift = value : message = value;
+	className === "shift-El" ? shift = value : message = value;
 })
 
 function createArray (_string){
@@ -22,17 +22,18 @@ function createArray (_string){
 	return newArray;
 }
 
-function getEncrypted (){
+function getEncryptedMsg (){
 	decryptMessage = false;
-	changedMessage = encrypt(characters, shift, message, 1);
-	renderMessage(changedMessage, outputEl);
+	changedMessage = encrypt(characters, shift, message, 1)
+	renderMessage(outputEl, changedMessage,"Encrypted");
 }
 
 function encrypt (_characters,_shift,_message,_one){
-	let newString = ""
-	for (let character of _message) {
+	let newString = "";
+	for (let i = 0; i < _message.length; i++) {
+		let character = _message[i].toUpperCase();
 		if(character != " "){	
-			let charIndex =_characters.indexOf(character.toUpperCase());
+			let charIndex =_characters.indexOf(character);
 			let sum =  charIndex + (_shift * _one);
 			const index = decryptMessage === false ?
 				sum % 26
@@ -51,9 +52,12 @@ function encrypt (_characters,_shift,_message,_one){
 function decrypt(){
 	decryptMessage = true;
 	let decryptedMessage = encrypt(characters, shift, changedMessage, -1);
-	renderMessage(decryptedMessage, decryptEl);
+	renderMessage( decryptEl,decryptedMessage, "Decryted");
 }
 
-function renderMessage (_changedMessage,_element){
-	_element.innerText = _changedMessage;
+function renderMessage (_element,_changedMessage,_string){
+	let lowerCaseMsg = ""
+	createArray(_changedMessage).forEach(char => lowerCaseMsg+= char.toLowerCase());
+	_element.style.display = "block";
+	_element.innerText =  `${_string}: ${lowerCaseMsg}`;
 }

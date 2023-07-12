@@ -1,54 +1,74 @@
-body{
+html,body{
 	background-color:#f5e19e;
-  font: 25px monospace;
-  font-weight: 750;
-
+	background-image: url(boingBoing.png);
+	margin: 0px;
+	font: 30px monospace;
 }
 
-#cypher-Img{
-  background-color: coral;
-  position: static;
-  margin-bottom: -45%;
-  margin-left: 50px;
-  height: 320px;
-  width: 410px;
+main{
+	padding: 0.5em;
+	margin: 5vh auto;
+	width: 50vw;
 }
 
-#UI{
-		background-color:coral;
-	
-    margin: auto;
-    border-radius:10px;
-    color: gold;
-    width: 770px;			
+img{
+	width: 100%;
+	height: 100px;
 }
 
-#ceasar-Header{
-  color:#00ffe5;
-	margin-left: 100px;
-  margin-top:3px;
+.card{
+	background-color:coral;
+	padding: 1em;
+	width: fit-content;
+	border-radius: 10px;
+	display: grid;
+	gap: 1em;
+	margin: auto;
 }
 
-.Prompt{
+h1{
+  color: #00ffe5;
+  margin: auto;
+  text-align: center;
+}
+
+h3{
 	margin-left: 50px;	
 }
 
-#input-El{
-	border-radius: 10px;
-	height: 30px;
-  width:600px;
-	font-size: 15px;
-  font-weight: 530;
+.card-content {
+	padding: 10px;
 }
 
-#cypher-Shift{	
-	border-radius: 10px;
-	padding-left: 10px;
-  height: 20px;
-  font-weight: 530;
+.get-data{
+	display: flex;
+	margin: auto;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.message-El{
+	height: 2.5em;
+	width: 100%;
+	margin: auto;
 }
 
-#encrypt-Btn{
+.shift-El{
+	height: 1.5em;
+	width: 5em;
+	margin: 1em auto 0px;
+}
+
+input{
+	margin: 5px auto;
+	padding: 0px 0.15rem;
+	text-align: center;
+	border-radius: 0.35rem;
+	border: 1px solid grey;
+	font-size: 0.7rem;
+	font-weight: bold;
+}
+
+.btn-encrypt{
 	background-color:#79c4c0;
 	color:brown;
 	font-weight: bold;
@@ -61,12 +81,40 @@ body{
 	margin-bottom:0px;;
 }
 
-#output-El{
-  margin-left: 50px;
-  color: gold;
+section{
+	display: grid;
+	grid-template-rows: repeat(2, auto);
+	padding: 5px;
+	gap: 0.5em;
+	height: fit-content;
 }
 
-#footer-p{
+p {
+	display: none;
+	color: white;
+	font-size: 0.7rem;
+	margin: auto;
+	font-family: cursive;
+}
+
+footer{
   text-align: center;
   margin: auto 20%;
+}
+
+.buttons-wrapper {
+	display: flex;
+	padding: 0.5em;
+	justify-content: center;
+}
+
+button {
+	background-color: #7563ad;
+	color: white;
+	margin: 0px 0.5em;
+	font-size: 0.7rem;
+	font-weight: bold;
+	padding: 0.5em;
+	border-radius: 0.3rem;
+	border: none;
 }
