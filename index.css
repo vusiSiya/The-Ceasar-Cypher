@@ -1,14 +1,15 @@
 html,body{
 	background-color:#f5e19e;
-	background-image: url(boingBoing.png);
+	/* background-image: url(boingBoing.png); */
 	margin: 0px;
 	font: 30px monospace;
 }
 
 main{
-	padding: 0.5em;
-	margin: 5vh auto;
-	width: 50vw;
+	padding: 5em;
+	margin: 1em;
+	width: auto;
+	background-image: url(boingBoing.png);
 }
 
 img{
@@ -30,6 +31,7 @@ h1{
   color: #00ffe5;
   margin: auto;
   text-align: center;
+  text-shadow: 5px 9px 4px black;
 }
 
 h3{
@@ -58,6 +60,10 @@ h3{
 	margin: 1em auto 0px;
 }
 
+button:hover {
+	box-shadow: -3px 3px 8px 4px #514c4c;
+}
+
 input{
 	margin: 5px auto;
 	padding: 0px 0.15rem;
@@ -65,20 +71,8 @@ input{
 	border-radius: 0.35rem;
 	border: 1px solid grey;
 	font-size: 0.7rem;
-	font-weight: bold;
-}
-
-.btn-encrypt{
-	background-color:#79c4c0;
-	color:brown;
-	font-weight: bold;
-	font: 20px monospace;
-	border: none;
-	border-radius: 10px;
-	padding: 13px;
-	margin-top: 5px;
-	margin-left:40%;
-	margin-bottom:0px;;
+	font-family: monospace;
+	box-shadow: -1px -0.5px 4px 0px #736f6f;
 }
 
 section{
@@ -92,14 +86,11 @@ section{
 p {
 	display: none;
 	color: white;
-	font-size: 0.7rem;
+	font-size: 0.75em;
 	margin: auto;
 	font-family: cursive;
-}
-
-footer{
-  text-align: center;
-  margin: auto 20%;
+	text-shadow: 1px 2px #281c53;
+	font-weight: bold;
 }
 
 .buttons-wrapper {
@@ -117,4 +108,10 @@ button {
 	padding: 0.5em;
 	border-radius: 0.3rem;
 	border: none;
+	/* box-shadow: -4.5px -2px 4px #514c4c; */
+}
+
+footer{
+  text-align: center;
+  margin: auto 20%;
 }

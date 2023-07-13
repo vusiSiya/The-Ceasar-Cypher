@@ -1,6 +1,3 @@
-const root = document.querySelector(".root")
-const inputEl = document.querySelector(".message-El");
-const shiftEl = document.querySelector(".shift-El");
 const outputEl = document.querySelector(".output-El");
 const decryptEl = document.querySelector(".decrypted-El");
 let message;
@@ -31,9 +28,12 @@ function getEncryptedMsg (){
 function encrypt (_characters,_shift,_message,_one){
 	let newString = "";
 	for (let i = 0; i < _message.length; i++) {
-		let character = _message[i].toUpperCase();
-		if(character != " "){	
-			let charIndex =_characters.indexOf(character);
+		let char = _message[i].toUpperCase();
+		if(char === " "){	
+			newString += char;
+		}
+		else {
+			let charIndex =_characters.indexOf(char);
 			let sum =  charIndex + (_shift * _one);
 			const index = decryptMessage === false ?
 				sum % 26
@@ -41,9 +41,6 @@ function encrypt (_characters,_shift,_message,_one){
 				sum < 0 ? 26 + (sum % 26) : sum;
 			let newChar = _characters[index];
 			newString += newChar;		
-		}
-		else {
-			newString += character;
 		}		
 	}
 	return newString;
@@ -52,7 +49,7 @@ function encrypt (_characters,_shift,_message,_one){
 function decrypt(){
 	decryptMessage = true;
 	let decryptedMessage = encrypt(characters, shift, changedMessage, -1);
-	renderMessage( decryptEl,decryptedMessage, "Decryted");
+	renderMessage( decryptEl,decryptedMessage, "Decryted");	
 }
 
 function renderMessage (_element,_changedMessage,_string){
