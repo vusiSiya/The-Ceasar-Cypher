@@ -1,41 +1,60 @@
+const outputEl = document.querySelector(".output-El");
+const decryptEl = document.querySelector(".decrypted-El");
+let message;
+let shift;
+let changedMessage;
+let decryptMessage = false;
+const characters = createArray('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
-const inputEl = document.getElementById("input-El")
-const Shift = document.getElementById("cypher-Shift")
-const outputEl = document.getElementById("output-El")
-const encryptBtn = document.getElementById("encrypt-Btn")
-const ImageElement = document.getElementById("image-El")
-
-let alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-
-encryptBtn.addEventListener("click", function() {
-  inputEl.textContent = " "
-  outputEl.textContent = " ";
-  ImageElement.innerHTML = `  <img src="boingBoing.png" id="cypher-Img" />`
-  encryptMessage(inputEl.value)
-
+document.addEventListener("change", (e)=>{
+	const {value, className} = e.target;
+	className === "shift-El" ? shift = value : message = value;
 })
 
-function encryptMessage(_message) {
-  _message = _message.toUpperCase()
-  let j = 0, i = 0;
-  let mLength = _message.length
-  let aLength = alphabets.length
-  let encrypt = ""
-  let newLetter = ""
-
-  for (i = 0; i < mLength; i++) {
-    for (j = 0; j < aLength; j++) {
-      if (_message[i] === alphabets[j]) {
-        let sum = j + Shift.value * 1
-        newLetter = alphabets[sum % 26]
-        encrypt = encrypt + `${newLetter}`
-      }
-      else if (_message[i] === " ") {
-        encrypt += " "
-      }
-    }
-  }
-
-  return outputEl.textContent = `Encrypted Message: ${encrypt}`;
+function createArray (_string){
+	let newArray = [];
+	for (let character of _string) {
+		newArray.push(character);
+	}
+	return newArray;
 }
 
+function getEncryptedMsg (){
+	decryptMessage = false;
+	changedMessage = encrypt(characters, shift, message, 1)
+	renderMessage(outputEl, changedMessage,"Encrypted");
+}
+
+function encrypt (_characters,_shift,_message,_one){
+	let newString = "";
+	for (let i = 0; i < _message.length; i++) {
+		let char = _message[i].toUpperCase();
+		if(char === " "){	
+			newString += char;
+		}
+		else {
+			let charIndex =_characters.indexOf(char);
+			let sum =  charIndex + (_shift * _one);
+			const index = decryptMessage === false ?
+				sum % 26
+				: 
+				sum < 0 ? 26 + (sum % 26) : sum;
+			let newChar = _characters[index];
+			newString += newChar;		
+		}		
+	}
+	return newString;
+}
+
+function decrypt(){
+	decryptMessage = true;
+	let decryptedMessage = encrypt(characters, shift, changedMessage, -1);
+	renderMessage( decryptEl,decryptedMessage, "Decryted");	
+}
+
+function renderMessage (_element,_changedMessage,_string){
+	let lowerCaseMsg = ""
+	createArray(_changedMessage).forEach(char => lowerCaseMsg+= char.toLowerCase());
+	_element.style.display = "block";
+	_element.innerText =  `${_string}: ${lowerCaseMsg}`;
+}
