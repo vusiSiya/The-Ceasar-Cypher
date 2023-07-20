@@ -22,7 +22,7 @@ function createArray (_string){
 function getEncryptedMsg (){
 	decryptMessage = false;
 	changedMessage = encrypt(characters, shift, message, 1)
-	renderMessage(outputEl, changedMessage,"Encrypted");
+	renderMessage(changedMessage, outputEl);
 }
 
 function encrypt (_characters,_shift,_message,_one){
@@ -49,12 +49,12 @@ function encrypt (_characters,_shift,_message,_one){
 function decrypt(){
 	decryptMessage = true;
 	let decryptedMessage = encrypt(characters, shift, changedMessage, -1);
-	renderMessage( decryptEl,decryptedMessage, "Decryted");	
+	renderMessage(decryptedMessage, decryptEl);	
 }
 
-function renderMessage (_element,_changedMessage,_string){
-	let lowerCaseMsg = ""
-	createArray(_changedMessage).forEach(char => lowerCaseMsg+= char.toLowerCase());
+function renderMessage (_changedMessage,_element){
+	let msg = ""
+	createArray(_changedMessage).forEach(char => msg+= char.toLowerCase());
 	_element.style.display = "block";
-	_element.innerText =  `${_string}: ${lowerCaseMsg}`;
+	_element.innerText =  msg;
 }
