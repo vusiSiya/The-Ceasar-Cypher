@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>The Ceasar Cypher</title>
   <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
-  <div id="UI">
-    <div id=image-El></div>
-    <h1 id="ceasar-Header">The Ceasar Cypher</h1>
-    <h3 class="Prompt">
-      Enter a message:
-      <input type="text" id="input-El" />
-    </h3>
-    <h3 class="Prompt num">
-      Pick a shift:
-      <input type="number" id="cypher-Shift" width="4px" />
-    </h3>
-    <button id="encrypt-Btn">Encrypt</button>
-    <p id="output-El">Encrypted message:</p>
-  </div>
+  <main>
+    <div class="card">
+      <h1>The Ceasar Cypher</h1>
+      <div class="card-content">
+        <div class="get-data">
+          <input required type="text" name="message" placeholder="Type your message here..." class="message-El" />
+          <input required type="number" name="shift" placeholder="shift" class="shift-El" />
+        </div>
+        <div class="buttons-wrapper">
+          <button class="btn-encrypt" onclick="getEncryptedMsg()">Encrypt</button>
+          <button class="btn-decrypt" onclick="decrypt()">Decrypt</button>
+        </div>
+        <section>
+          <p class="output-El"></p>
+          <p class="decrypted-El"></p>
+        </section>
+      </div>
+    </div>
+  </main>
   <script src="index.js"></script>
 </body>
-<footer>
-  <p id="footer-p"> @ 2023 Siyabonga Mahlalela</p>
-</footer>
+
 </html>
