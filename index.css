@@ -1,6 +1,5 @@
 html,body{
 	background-color:#f5e19e;
-	/* background-image: url(boingBoing.png); */
 	margin: 0px;
 	font: 30px monospace;
 }
@@ -10,6 +9,10 @@ main{
 	margin: 1em;
 	width: auto;
 	background-image: url(boingBoing.png);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: nowrap;
 }
 
 img{
@@ -49,15 +52,19 @@ h3{
 	flex-direction: column;
 }
 .message-El{
-	height: 2.5em;
+	min-height: 2.5em;
 	width: 100%;
-	margin: auto;
+	padding: 0px;
 }
 
 .shift-El{
 	height: 1.5em;
 	width: 5em;
-	margin: 1em auto 0px;
+	margin: 0.5em auto;
+}
+
+input:hover{
+	box-shadow: 0px 1px 9px 0px cyan;
 }
 
 button:hover {
@@ -72,7 +79,7 @@ input{
 	border: 1px solid grey;
 	font-size: 0.7rem;
 	font-family: monospace;
-	box-shadow: -1px -0.5px 4px 0px #736f6f;
+	border-block-color: grey;
 }
 
 section{
@@ -86,11 +93,11 @@ section{
 p {
 	display: none;
 	color: white;
-	font-size: 0.75em;
+	font-size: 0.85rem;
 	margin: auto;
-	font-family: cursive;
-	text-shadow: 1px 2px #281c53;
-	font-weight: bold;
+	font-family: monospace;
+	text-shadow: .5px 3px black;
+	color: white;
 }
 
 .buttons-wrapper {
@@ -109,6 +116,16 @@ button {
 	border-radius: 0.3rem;
 	border: none;
 	/* box-shadow: -4.5px -2px 4px #514c4c; */
+}
+.output-El::before{
+	content:"encryption: ";
+	font-size:inherit;
+	font-weight: bold;
+}
+.decrypted-El::before{
+	font-weight: bold;
+	content:"decryption: ";
+	font-size: inherit;
 }
 
 footer{

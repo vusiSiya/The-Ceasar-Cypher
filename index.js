@@ -7,8 +7,8 @@ let decryptMessage = false;
 const characters = createArray('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 document.addEventListener("change", (e) => {
-  const { value, className } = e.target;
-  className === "shift-El" ? shift = value : message = value;
+	const {value, className} = e.target;
+	className === "shift-El" ? shift = value : message = value;
 })
 
 function createArray(_string) {
@@ -19,10 +19,11 @@ function createArray(_string) {
   return newArray;
 }
 
-function getEncryptedMsg() {
-  decryptMessage = false;
-  changedMessage = encrypt(characters, shift, message, 1)
-  renderMessage(outputEl, changedMessage, "Encrypted");
+
+function getEncryptedMsg (){
+	decryptMessage = false;
+	changedMessage = encrypt(characters, shift, message, 1);
+	renderMessage(changedMessage, outputEl);
 }
 
 function encrypt(_characters, _shift, _message, _one) {
@@ -46,15 +47,15 @@ function encrypt(_characters, _shift, _message, _one) {
   return newString;
 }
 
-function decrypt() {
-  decryptMessage = true;
-  let decryptedMessage = encrypt(characters, shift, changedMessage, -1);
-  renderMessage(decryptEl, decryptedMessage, "Decryted");
+function decrypt(){
+	decryptMessage = true;
+	let decryptedMessage = encrypt(characters, shift, changedMessage, -1);
+	renderMessage(decryptedMessage, decryptEl);	
 }
 
-function renderMessage(_element, _changedMessage, _string) {
-  let lowerCaseMsg = ""
-  createArray(_changedMessage).forEach(char => lowerCaseMsg += char.toLowerCase());
-  _element.style.display = "block";
-  _element.innerText = `${_string}: ${lowerCaseMsg}`;
+function renderMessage (_changedMessage,_element){
+	_element.style.display = "block";
+	const msg = createArray(_changedMessage).reduce((acc,char) =>{
+		return acc + char.toLowerCase()},"");
+	_element.innerText =  msg;
 }
