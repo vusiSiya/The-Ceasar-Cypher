@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset= "UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Ceasar Cypher</title>
   <link rel="stylesheet" href="index.css" />
 </head>
-
 <body>
   <main>
-    <div class="card">
+    <div class="container">
       <h1>The Ceasar Cypher</h1>
       <div class="card-content">
-        <div class="get-data">
+        <section class="input-elements">
           <input required type="text" name="message" placeholder="Type your message here..." class="message-El" />
           <input required type="number" name="shift" placeholder="shift" class="shift-El" />
-        </div>
+        </section>
         <div class="buttons-wrapper">
           <button class="btn-encrypt" onclick="getEncryptedMsg()">Encrypt</button>
           <button class="btn-decrypt" onclick="decrypt()">Decrypt</button>
