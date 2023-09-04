@@ -1,5 +1,5 @@
-const outputEl = document.querySelector(".output-El");
-const decryptEl = document.querySelector(".decrypted-El");
+const outputEl = document.querySelector(".encrypted-el");
+const decryptEl = document.querySelector(".decrypted-el");
 let message;
 let shift;
 let changedMessage;
@@ -8,7 +8,7 @@ const characters = createArray('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 document.addEventListener("change", (e) => {
   const { value, className } = e.target;
-  className === "shift-El" ? shift = value : message = value;
+  className === "shift-el" ? shift = value : message = value;
 })
 
 function createArray(_string) {

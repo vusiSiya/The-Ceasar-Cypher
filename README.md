@@ -1,8 +1,8 @@
-# The-Ceasar-Cypher
-# Encrypt your message with the Ceasar cypher
-Live Demo: https://the-ceasar-cypher.siyabongamahlal.repl.co/
+﻿# The-Ceasar-Cypher
+### Encrypt your message with the Ceasar cypher
+👉<a href = "https://the-ceasar-cypher.siyabongamahlal.repl.co/" > Live Demo</a>
 
-# Languages: 
+## Languages: 
 * JavaScript
 * HTML
 * CSS
