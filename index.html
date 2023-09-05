@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>The Ceasar Cypher</title>
-  <link rel="stylesheet" href="index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ceasar Cypher</title>
+    <link rel="stylesheet" href="index.css" />
 </head>
-
 <body>
-  <main>
-    <div class="card">
-      <h1>The Ceasar Cypher</h1>
-      <div class="card-content">
-        <div class="get-data">
-          <input required type="text" name="message" placeholder="Type your message here..." class="message-El" />
-          <input required type="number" name="shift" placeholder="shift" class="shift-el" />
+    <main>
+        <div class="container">
+            <h1>The Ceasar Cypher</h1>
+            <div class="card-content">
+                <section class="input-elements">
+                    <input required type="text" name="message" placeholder="Type your message here..." class="message-el" />
+                    <input required type="number" name="shift" placeholder="shift" class="shift-el" />
+                </section>
+            </div>
+            <div class="buttons-wrapper">
+                <button class="btn-encrypt" onclick="getEncryptedMsg()">Encrypt</button>
+                <button class="btn-decrypt" onclick="decrypt()">Decrypt</button>
+            </div>
+            <section>
+                <p class="encrypted-el"></p>
+                <p class="decrypted-el"></p>
+            </section>
         </div>
-        <div class="buttons-wrapper">
-          <button class="btn-encrypt" onclick="getEncryptedMsg()">Encrypt</button>
-          <button class="btn-decrypt" onclick="decrypt()">Decrypt</button>
-        </div>
-        <section>
-          <p class="encrypted-el"></p>
-          <p class="decrypted-el"></p>
-        </section>
-      </div>
-    </div>
-  </main>
-  <script src="index.js"></script>
+    </main>
+    <script src="index.js"></script>
 </body>
 
 </html>
