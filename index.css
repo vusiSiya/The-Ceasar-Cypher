@@ -23,7 +23,7 @@ img {
     grid-row: 2/-1;
     grid-column: 2/6;
     padding: 1em;
-    width: auto;
+    width: -webkit-fill-available;
     border-radius: .52rem;
     display: grid;
     gap: .9em;
