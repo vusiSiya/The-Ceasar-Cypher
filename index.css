@@ -10,7 +10,8 @@ main {
     justify-content: center;
     align-content: center;
     grid-template-rows: 1fr 7fr 1fr;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6,auto);
+    margin:1em;
 }
 
 img {
